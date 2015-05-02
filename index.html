@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <style>
+      .widget .land {
+        fill: #ddd;
+      }
+
+      .widget .border {
+        fill: none;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+      .widget .node {
+        fill: brown;
+        fill-opacity: .5;
+        stroke: #fff;
+        stroke-width: .5px;
+      }
+
+      .widget {
+        margin: 0 auto;
+        max-width: 1020px;
+        width: 100%;
+      }
+
+      .widget label {
+        float: left;
+        text-align: center;
+        width: 33%;
+      }
+
+      #graph {
+        width: 100%;
+      }
+    </style>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="widget">
+      <form>
+        <label>
+          Start:
+          2009
+          <input id="endpoint1" class="slider_scale" type="range" name="points" min="2009" max="2014" step="1" value="2009">
+          2014
+        </label>
+        <label>
+          End:
+          2009
+          <input id = "endpoint2" class="slider_scale" type="range" name="points" min="2009" max="2014" step="1" value="2014">
+          2014
+        </label>
+        <label>
+          Sport
+          <select id="sport_type">
+            <option value="All">All</option>
+            <option value="Baseball">Baseball</option>
+            <option value="Football">Football</option>
+            <option value="Field Hockey">Field Hockey</option>
+            <option value="Men's Basketball">Men's Basketball</option>
+            <option value="Men's Heavyweight Crew">Men's Heavyweight Crew</option>
+            <option value="Men's Lightweight Crew">Men's Lightweight Crew</option>
+            <option value="Men's Fencing">Men's Fencing</option>
+            <option value="Men's Golf">Men's Golf</option>
+            <option value="Men's Ice Hockey">Men's Ice Hockey</option>
+            <option value="Men's Lacrosse">Men's Lacrosse</option>
+            <option value="skiing">Skiing</option>
+            <option value="Sailing">Sailing</option>
+            <option value="Men's Soccer">Men's Soccer</option>
+            <option value="Men's Swimming and Diving">Men's Swimming and Diving</option>
+            <option value="Men's Tennis">Men's Tennis</option>
+            <option value="Men's Volleyball">Men's Volleyball</option>
+            <option value="Men's Water Polo">Men's Water Polo</option>
+            <option value="Softball">Softball</option>
+            <option value="Track and Field">Track and Field</option>
+            <option value="Women's Basketball">Women's Basketball</option>
+            <option value="Women's Heavyweight Crew">Women's Heavyweight Crew</option>
+            <option value="Women's Lightweight Crew">Women's Lightweight Crew</option>
+            <option value="Women's Fencing">Women's Fencing</option>
+            <option value="Women's Golf">Women's Golf</option>
+            <option value="Women's Ice Hockey">Women's Ice Hockey</option>
+            <option value="Women's Lacrosse">Women's Lacrosse</option>
+            <option value="Wrestling">Wrestling</option>
+            <option value="Women's Rugby">Women's Rugby</option>
+            <option value="Women's Soccer">Women's Soccer</option>
+            <option value="Women's Squash">Women's Squash</option>
+            <option value="Women's Swimming and Diving">Women's Swimming and Diving</option>
+            <option value="Women's Tennis">Women's Tennis</option>
+            <option value="Women's Volleyball">Women's Volleyball</option>
+            <option value="Women's Water Polo">Women's Water Polo</option>
+            <option value="Cross Country">Cross Country</option>
+          </select>
+        </label>
+      </form>
+
+      <svg id="graph" preserveAspectRatio="xMinYMin" viewBox="0 0 960 600">
+      </svg>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
