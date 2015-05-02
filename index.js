@@ -90,7 +90,7 @@ function get_newdata(start_year, end_year, team, initData) {
     return restructuredData
 };
 
-d3.json("us.json", function(error, us) {
+d3.json("https://cdn.rawgit.com/harvard-crimson/harvard-athletes-geography/0ca55d6bf5a655648ea8352f15ab4e6607606b7f/us.json", function(error, us) {
   if (error) return console.error(error);
 
     svg.append("path")
@@ -103,7 +103,7 @@ d3.json("us.json", function(error, us) {
         .attr("class", "border border--state")
         .attr("d", path);
 
-   d3.json("data.json", function(error, data) {
+   d3.json("https://cdn.rawgit.com/harvard-crimson/harvard-athletes-geography/0ca55d6bf5a655648ea8352f15ab4e6607606b7f/data.json", function(error, data) {
 
         // Set the initial base times
         start_time = 2009
