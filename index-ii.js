@@ -61,7 +61,7 @@ function get_newdata(start_year, end_year, team, initData) {
     return restructuredData 
 };
 
-d3.json("us.json", function(error, us) {
+d3.json("https://cdn.rawgit.com/harvard-crimson/harvard-athletes-geography/f4dd4d68f484823f2667a8d8d03acada1a07c2a3/us.json", function(error, us) {
   if (error) return console.error(error);
 
   svg.append("path")
