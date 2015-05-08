@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <style>
+      .widget .land {
+        fill: #ddd;
+      }
+
+      .widget .border {
+        fill: none;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+
+      .widget .node {
+        fill: brown;
+        fill-opacity: .5;
+        stroke: #fff;
+        stroke-width: .5px;
+      }
+
+      .widget {
+        margin: 0 auto;
+        max-width: 1020px;
+        width: 100%;
+      }
+
+      .widget form {
+        overflow: hidden;
+      }
+
+      .widget label {
+        float: left;
+        text-align: center;
+        width: 33%;
+      }
+
+      .widget h3 {
+        font-family: Colaborate;
+        font-weight: normal;
+        margin: 5px 0 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .widget h4 {
+        font-family: Colaborate;
+        font-weight: normal;
+        margin: 0;
+        text-align: center;
+      }
+
+      #graph {
+        margin-top: -30px;
+        width: 100%;
+      }
+    </style>
+
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="widget">
+      <form>
+        <label>
+          Start:
+          1970
+          <input id="endpoint1" class="slider_scale" type="range" name="points" min="1970" max="2014" step="1" value="1970">
+          2014
+        </label>
+        <label>
+          End:
+          1970
+          <input id = "endpoint2" class="slider_scale" type="range" name="points" min="1970" max="2014" step="1" value="2014">
+          2014
+        </label>
+        <label>
+          Sport
+          <select id="sport_type">
+            <option value="mbkb">Basketball</option>
+            <option value="fball">Football</option>
+          </select>
+        </label>
+      </form>
+
+      <h3><span id="sport">Basketball</span></h3>
+      <h4><span id="startTime">1970</span> to <span id="endTime">2014</span></h4>
+
+      <svg id="graph" preserveAspectRatio="xMinYMin" viewBox="0 0 960 600">
+      </svg>
+    </div>
+
+    <script src="index-ii.js"></script>
+  </body>
+</html>
